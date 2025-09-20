@@ -1,7 +1,19 @@
 {
   "name": "vinaysikarwar/kria-lite",
   "description": "Kria Lite — tiny vanilla JS WYSIWYG editor with PHP upload example.",
-  "type": "project",
+  "type": "library",
   "license": "MIT",
+  "homepage": "https://github.com/vinaysikarwar/kria-lite",
+  "keywords": ["wysiwyg", "editor", "javascript", "vanilla", "rich-text", "upload"],
+  "support": {
+    "issues": "https://github.com/vinaysikarwar/kria-lite/issues",
+    "source": "https://github.com/vinaysikarwar/kria-lite"
+  },
+  "authors": [
+    {
+      "name": "Vinay Sikarwar",
+      "role": "Maintainer"
+    }
+  ],
   "require": {}
 }
