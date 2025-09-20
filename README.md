@@ -83,6 +83,10 @@ Outputs: `editor.widget.min.js` and `editor.widget.min.js.map`.
 - Repository: https://github.com/vinaysikarwar/kria-lite
 - Issue tracker: https://github.com/vinaysikarwar/kria-lite/issues
 
+Try online:
+- StackBlitz (static): https://stackblitz.com/fork/github/vinaysikarwar/kria-lite
+- CodeSandbox (import from GitHub): https://codesandbox.io/p/github/vinaysikarwar/kria-lite
+
 GitHub topics (set): `wysiwyg`, `editor`, `vanilla-js`, `rich-text`, `lightweight`, `javascript`
 
 Tip: Add a repo social preview image (Settings → Social preview). A screenshot of the editor or the `assets/logo.svg` on a gradient background works well.
