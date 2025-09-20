@@ -1,0 +1,7 @@
+{
+  "name": "vinaysikarwar/kria-lite",
+  "description": "Kria Lite — tiny vanilla JS WYSIWYG editor with PHP upload example.",
+  "type": "project",
+  "license": "MIT",
+  "require": {}
+}

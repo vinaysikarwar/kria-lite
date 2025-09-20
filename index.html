@@ -1,0 +1,20 @@
+<!-- Kria Lite WYSIWYG Editor (vanilla JS) -->
+<script src="editor.widget.js"></script>
+<h2 style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 12px 0;">Kria Lite WYSIWYG Editor</h2>
+<textarea id="editor" class="wysiwyg" style="width: 100%; height: 300px;"></textarea>
+
+<script>
+  // Set page title for this demo
+  try { document.title = 'Kria Lite WYSIWYG Editor'; } catch (e) {}
+
+  WYSIWYG.init('.wysiwyg', {
+    uploadUrl: '/wysiwyg/upload.php',
+    uploadFieldName: 'image',
+    uploadHeaders: { 'X-CSRF-Token': '...' },
+    onUploadProgress: (percent, loaded, total, imgEl, instance) => {
+      // optional: custom progress UI
+      console.log('upload', percent);
+    },
+    parseUploadResponse: (json) => json && json.url // optional, default already handles common shapes
+  });
+</script>

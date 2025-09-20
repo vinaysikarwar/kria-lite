@@ -1,0 +1,30 @@
+{
+  "name": "kria-lite",
+  "version": "0.1.0",
+  "description": "Kria Lite — a tiny vanilla JS WYSIWYG editor",
+  "main": "editor.widget.js",
+  "scripts": {
+    "build": "uglifyjs editor.widget.js -c -m -o editor.widget.min.js --source-map 'filename=editor.widget.min.js.map'",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "wysiwyg",
+    "editor",
+    "vanilla-js",
+    "rich-text",
+    "lightweight"
+  ],
+  "author": "Kria Lite contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/kria-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinaysikarwar/kria-lite/issues"
+  },
+  "homepage": "https://github.com/vinaysikarwar/kria-lite#readme",
+  "devDependencies": {
+    "uglify-js": "^3.19.3"
+  }
+}
