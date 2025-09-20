@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kria Lite — Vanilla JS WYSIWYG Editor</title>
+    <meta name="description" content="Kria Lite is a tiny, dependency-free WYSIWYG editor in vanilla JavaScript." />
+    <meta property="og:title" content="Kria Lite — Vanilla JS WYSIWYG Editor" />
+    <meta property="og:description" content="Tiny, fast, dependency-free. Paste, format, and insert images." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vinaysikarwar.github.io/kria-lite/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/vinaysikarwar/kria-lite/main/assets/logo.svg" />
+    <style>
+      body{font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;background:#0b1220;color:#e5e7eb}
+      a{color:#93c5fd}
+      .container{max-width:800px;margin:0 auto}
+      .hero{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+      .hero img{width:160px;height:auto}
+      .card{background:#0f172a;border:1px solid #1f2937;border-radius:12px;padding:16px}
+      textarea{width:100%;height:260px}
+      footer{margin-top:24px;color:#9ca3af}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <img alt="Kria Lite logo" src="../assets/logo.svg" />
+        <div>
+          <h1 style="margin:0 0 8px">Kria Lite — Vanilla JS WYSIWYG</h1>
+          <p style="margin:0">Tiny, fast, dependency-free. Paste, format, and insert images.</p>
+          <p style="margin:8px 0 0"><a href="https://github.com/vinaysikarwar/kria-lite">View on GitHub</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <script src="../editor.widget.js"></script>
+        <textarea class="wysiwyg" placeholder="Type here...&#10;Use toolbar for formatting.&#10;Insert images to preview (no upload in demo)."></textarea>
+        <script>
+          try { document.title = 'Kria Lite — Vanilla JS WYSIWYG Editor'; } catch(e){}
+          // Initialize without upload backend in this demo
+          WYSIWYG.init('.wysiwyg', { height: 260 });
+        </script>
+      </div>
+      <footer>
+        <p>Note: This demo does not upload images. Configure <code>uploadUrl</code> in your app to enable uploads.</p>
+      </footer>
+    </div>
+  </body>
+  </html>

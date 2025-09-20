@@ -77,12 +77,19 @@ Outputs: `editor.widget.min.js` and `editor.widget.min.js.map`.
 - Packagist: submit this repo to Packagist to expose the PHP example via Composer
 - CDN: once on npm, unpkg/jsDelivr can serve the minified file directly
 
-## Social/SEO tips
+## Demo and social links
 
-- Add repo topics: `wysiwyg`, `editor`, `vanilla-js`, `rich-text`, `lightweight`, `javascript`
-- Add a short description and a banner image (GitHub social preview)
-- Write a short demo page and animated GIF in the README
-- Consider a simple site or GitHub Pages demo linking to `index.html`
+- Live demo (GitHub Pages): https://vinaysikarwar.github.io/kria-lite/
+- Repository: https://github.com/vinaysikarwar/kria-lite
+- Issue tracker: https://github.com/vinaysikarwar/kria-lite/issues
+
+GitHub topics (set): `wysiwyg`, `editor`, `vanilla-js`, `rich-text`, `lightweight`, `javascript`
+
+Tip: Add a repo social preview image (Settings → Social preview). A screenshot of the editor or the `assets/logo.svg` on a gradient background works well.
+
+## Demo
+
+The demo is a simple static page using `KriaLite.init()` and no upload backend. To enable uploads in your own app, configure `uploadUrl` as shown above.
 
 ## Notes
 
