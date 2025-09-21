@@ -2,6 +2,7 @@
   Kria Lite — advanced, tiny, vanilla JS WYSIWYG editor
   - WYSIWYG.init(selectorOrNodeList, options)
   - KriaLite alias mirrors WYSIWYG
+  - Developed By Vinay Sikarwar
   - Supports uploadUrl / uploadHandler for image uploads
   - Advanced toolbar, dialogs, keyboard shortcuts, API methods
 */
@@ -783,5 +784,3 @@ function installPasteHandler(instance){
   try { if(!global.KriaLite) global.KriaLite = global.WYSIWYG; } catch(e) {}
 
 })(window);
-// Advanced Kria Lite build (copied from editor.widget.js)
-// ...existing code will be injected below by the build step or manual sync...

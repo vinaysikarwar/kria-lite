@@ -16,6 +16,30 @@ A tiny, dependency-free WYSIWYG editor in vanilla JavaScript. Fast to load, simp
 - Image upload with progress (via XHR or custom handler)
 - Basic sanitization built in
 
+## Feature overview
+
+- Core
+  - Lightweight vanilla JS; no dependencies
+  - Toolbar: Bold, Italic, Underline, Strike, Remove format, H1/H2/H3, Paragraph, Align Left/Center/Right, Bulleted/Numbered lists, Indent/Outdent, Link, Image, Table, Horizontal rule, Code block, Quote, Toggle Source (HTML), Fullscreen
+  - Keyboard shortcuts: Cmd/Ctrl+B/I/U, Cmd/Ctrl+K (link)
+  - Basic HTML sanitization
+  - Image upload via `uploadUrl` or custom `uploadHandler` with progress
+  - API: `getHTML`, `setHTML`, `getText`, `insertHtml`, `destroy`
+  - Optional autosave to localStorage
+
+- Advanced build extras (kria.editor.widget.*)
+  - Undo/Redo with custom snapshot history + toolbar buttons; shortcuts Cmd/Ctrl+Z and Shift+Cmd/Ctrl+Z
+  - Mobile-friendly UI: sticky/scrollable toolbar on small screens, larger tap targets, safe-area insets
+  - Font family dropdown, font size, font and background color pickers
+  - Link dialog (restores selection) and Image dialog
+  - Paste images from clipboard: instant blob preview, optional upload with URL replacement
+  - Table dialog: choose rows and columns before insert
+  - Code block insertion, Toggle source (WYSIWYG/HTML), Fullscreen mode
+  - Active-state indication for toolbar buttons
+  - Overridable icons via `options.icons`
+  - Plugin hook: `options.plugins: (instance) => void`
+  - Enhanced paste handling (prefer HTML; fallback to plain text → paragraphs)
+
 ## Quick start
 
 Include the script and enhance your `<textarea>`
@@ -68,7 +92,26 @@ npm install
 npm run build
 ```
 
-Outputs: `editor.widget.min.js` and `editor.widget.min.js.map`.
+Outputs:
+- Core: `editor.widget.min.js`, `editor.widget.min.js.map`
+- Advanced: `kria.editor.widget.min.js`, `kria.editor.widget.min.js.map`
+
+### Advanced build usage
+
+```html
+<script src="kria.editor.widget.min.js"></script>
+<textarea class="wysiwyg" style="width:100%;height:300px"></textarea>
+<script>
+  WYSIWYG.init('.wysiwyg', {
+    // Optional: customize icons per control
+    // icons: { undo: '<svg>...</svg>' },
+    // Optional image upload
+    uploadUrl: '/wysiwyg/upload.php',
+    uploadFieldName: 'image',
+    autosaveKey: 'post-42-draft'
+  });
+</script>
+```
 
 ## Publish options
 
