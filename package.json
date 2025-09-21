@@ -4,7 +4,9 @@
   "description": "Kria Lite — a tiny vanilla JS WYSIWYG editor",
   "main": "editor.widget.js",
   "scripts": {
-    "build": "uglifyjs editor.widget.js -c -m -o editor.widget.min.js --source-map 'filename=editor.widget.min.js.map'",
+    "build": "npm run build:core && npm run build:adv",
+    "build:core": "uglifyjs editor.widget.js -c -m -o editor.widget.min.js --source-map 'filename=editor.widget.min.js.map'",
+    "build:adv": "uglifyjs kria.editor.widget.js -c -m -o kria.editor.widget.min.js --source-map 'filename=kria.editor.widget.min.js.map'",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
