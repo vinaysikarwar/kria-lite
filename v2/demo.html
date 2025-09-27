@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kria Lite WYSIWYG Editor v0.2.0 - Enhanced Edition</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .demo-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .demo-header h1 {
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+        .demo-header p {
+            color: #64748b;
+            font-size: 16px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-item {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #475569;
+        }
+        .feature-item strong {
+            color: #1e293b;
+        }
+        .demo-section {
+            margin: 32px 0;
+        }
+        .demo-section h2 {
+            color: #1e293b;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .code-example {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        .button-group {
+            text-align: center;
+            margin: 24px 0;
+        }
+        .demo-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .demo-button:hover {
+            background: #2563eb;
+        }
+        .demo-button.secondary {
+            background: #6b7280;
+        }
+        .demo-button.secondary:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>Kria Lite WYSIWYG Editor <span class="version-badge">v0.2.0</span></h1>
+        <p>Enhanced Edition with Advanced Features & Collaboration Tools</p>
+    </div>
+
+    <div class="demo-container">
+        <h2>✨ New v0.2.0 Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <strong>Enhanced Text Formatting:</strong> Highlight, subscript/superscript, line height control
+            </div>
+            <div class="feature-item">
+                <strong>Advanced Tables:</strong> Custom rows/columns, headers, striped styling
+            </div>
+            <div class="feature-item">
+                <strong>Media Support:</strong> Video embeds (YouTube, Vimeo), drag & drop images
+            </div>
+            <div class="feature-item">
+                <strong>Smart Lists:</strong> Interactive checklists, collapsible sections
+            </div>
+            <div class="feature-item">
+                <strong>Find & Replace:</strong> Search and replace text with highlighting
+            </div>
+            <div class="feature-item">
+                <strong>Word Count:</strong> Real-time statistics (words, characters)
+            </div>
+            <div class="feature-item">
+                <strong>Templates & Snippets:</strong> Reusable content blocks
+            </div>
+            <div class="feature-item">
+                <strong>Image Resize:</strong> Drag handles to resize images inline
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <div class="demo-section">
+            <h2>🚀 Enhanced Editor Demo</h2>
+            <p>Try out all the new v0.2.0 features below:</p>
+            
+            <div data-wysiwyg-v2 
+                 data-wysiwyg-height="400" 
+                 data-wysiwyg-max-height="600"
+                 data-wysiwyg-placeholder="Start typing to explore v0.2.0 features...">
+                <h2>Welcome to Kria Editor v0.2.0! 🎉</h2>
+                <p>This enhanced version includes powerful new features:</p>
+                
+                <ul class="wysiwyg-checklist">
+                    <li>Enhanced text formatting options</li>
+                    <li class="checked">Advanced table creation</li>
+                    <li>Media embedding capabilities</li>
+                </ul>
+                
+                <div class="wysiwyg-collapsible open">
+                    <div class="wysiwyg-collapsible-header">📋 Feature Showcase</div>
+                    <div class="wysiwyg-collapsible-content">
+                        <p>You can now create <span class="wysiwyg-highlight">highlighted text</span>, use H<sub>2</sub>O for subscript, or E=mc<sup>2</sup> for superscript.</p>
+                        
+                        <table class="wysiwyg-table-advanced">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Status</th>
+                                    <th>Version</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Text Highlighting</td>
+                                    <td>✅ Ready</td>
+                                    <td>v0.2.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Video Embeds</td>
+                                    <td>✅ Ready</td>
+                                    <td>v0.2.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Find & Replace</td>
+                                    <td>✅ Ready</td>
+                                    <td>v0.2.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <blockquote>
+                    <p><em>"The v0.2.0 release brings professional-grade editing capabilities while maintaining the simplicity and performance Kria Editor is known for."</em></p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="demo-button" onclick="getContent()">Get Content</button> 
+            <button class="demo-button secondary" onclick="setContent()">Set Sample Content</button>
+            <button class="demo-button secondary" onclick="clearContent()">Clear</button>
+            <button class="demo-button secondary" onclick="toggleFullscreen()">Fullscreen</button>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <div class="demo-section">
+            <h2>💻 Quick Setup</h2>
+            <p>Get started with Kria Editor v0.2.0 in just a few lines:</p>
+            
+            <div class="code-example">// Basic initialization
+const editor = WYSIWYG.v2.init('#my-editor', {
+    height: 400,
+    maxHeight: 750,
+    toolbar: [
+        'bold', 'italic', 'underline', 'highlight', '|',
+        'h1', 'h2', 'h3', '|',
+        'fontFamily', 'fontSize', 'fontColor', '|',
+        'ul', 'ol', 'checklist', 'table', '|',
+        'image', 'video', 'link', '|',
+        'findReplace', 'wordCount', 'fullscreen'
+    ],
+    features: {
+        wordCount: true,
+        findReplace: true,
+        imageResize: true,
+        dragDrop: true
+    }
+});</div>
+
+            <div class="code-example">// Advanced features with templates
+const advancedEditor = WYSIWYG.v2.init('#advanced-editor', {
+    templates: [
+        { name: 'Meeting Notes', content: '&lt;h2&gt;Meeting Notes&lt;/h2&gt;&lt;p&gt;Date: &lt;/p&gt;&lt;ul class="wysiwyg-checklist"&gt;&lt;li&gt;Action item 1&lt;/li&gt;&lt;/ul&gt;' },
+        { name: 'Article Template', content: '&lt;h1&gt;Article Title&lt;/h1&gt;&lt;p class="lead"&gt;Introduction paragraph...&lt;/p&gt;' }
+    ],
+    snippets: [
+        { name: 'Highlight Box', content: '&lt;div style="background:#fff3cd;padding:12px;border-radius:6px;"&gt;💡 Tip: Your content here&lt;/div&gt;' }
+    ],
+    collaboration: {
+        enabled: true,
+        userId: 'user123',
+        userName: 'John Doe'
+    }
+});</div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <div class="demo-section">
+            <h2>🎯 Migration from v0.1.x</h2>
+            <p>Upgrading from v0.1.x? It's backward compatible:</p>
+            
+            <div class="code-example">// Your existing v0.1.x code still works!
+const editor = WYSIWYG.init('#editor', {
+    toolbar: ['bold', 'italic', 'link', 'image']
+});
+
+// Enhanced with v0.2.0 features
+const enhancedEditor = WYSIWYG.v2.init('#editor', {
+    toolbar: ['bold', 'italic', 'highlight', 'subscript', 'superscript', 
+              'link', 'image', 'video', 'findReplace']
+});</div>
+        </div>
+    </div>
+
+    <!-- Include the v0.2.0 Editor -->
+    <script src="kria.editor.v2.js"></script>
+    
+    <script>
+        // Initialize the demo editor
+        let demoEditor;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            demoEditor = WYSIWYG.v2.init('[data-wysiwyg-v2]', {
+                features: {
+                    wordCount: true,
+                    findReplace: true,
+                    imageResize: true,
+                    dragDrop: true,
+                    tableAdvanced: true
+                },
+                templates: [
+                    { 
+                        name: 'Meeting Notes', 
+                        content: '<h2>📋 Meeting Notes</h2><p><strong>Date:</strong> ' + new Date().toLocaleDateString() + '</p><p><strong>Attendees:</strong></p><ul class="wysiwyg-checklist"><li>Action item 1</li><li>Action item 2</li></ul>' 
+                    },
+                    { 
+                        name: 'Article Template', 
+                        content: '<h1>📝 Article Title</h1><p style="font-size:18px;color:#6b7280;">Write your introduction here...</p><h2>Section 1</h2><p>Content goes here...</p>' 
+                    },
+                    {
+                        name: 'Project Plan',
+                        content: '<h2>🚀 Project Plan</h2><div class="wysiwyg-collapsible"><div class="wysiwyg-collapsible-header">Phase 1: Planning</div><div class="wysiwyg-collapsible-content"><ul class="wysiwyg-checklist"><li>Requirement gathering</li><li>Timeline creation</li></ul></div></div>'
+                    }
+                ],
+                snippets: [
+                    { 
+                        name: '💡 Tip Box', 
+                        content: '<div style="background:#dbeafe;border-left:4px solid #3b82f6;padding:12px;border-radius:6px;margin:8px 0;">💡 <strong>Tip:</strong> Your helpful tip here</div>' 
+                    },
+                    { 
+                        name: '⚠️ Warning Box', 
+                        content: '<div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:12px;border-radius:6px;margin:8px 0;">⚠️ <strong>Warning:</strong> Important notice here</div>' 
+                    },
+                    {
+                        name: '✅ Success Box',
+                        content: '<div style="background:#dcfce7;border-left:4px solid #22c55e;padding:12px;border-radius:6px;margin:8px 0;">✅ <strong>Success:</strong> Great job! Task completed.</div>'
+                    }
+                ],
+                onWordCountUpdate: function(stats, instance) {
+                    console.log('Word count updated:', stats);
+                },
+                onContentChange: function(content, instance) {
+                    // Auto-save or other actions
+                }
+            });
+        });
+
+        function getContent() {
+            if (demoEditor) {
+                const content = demoEditor.getContent();
+                alert('Current content length: ' + content.length + ' characters\n\nCheck console for full HTML.');
+                console.log('Editor content:', content);
+            }
+        }
+
+        function setContent() {
+            if (demoEditor) {
+                const sampleContent = `
+                    <h2>🎨 Sample Content for v0.2.0</h2>
+                    <p>This demonstrates the new <span class="wysiwyg-highlight">highlighting feature</span> and other enhancements.</p>
+                    
+                    <p>Chemical formula: H<sub>2</sub>O, Einstein's equation: E=mc<sup>2</sup></p>
+                    
+                    <div class="wysiwyg-collapsible open">
+                        <div class="wysiwyg-collapsible-header">🔧 Feature Demonstration</div>
+                        <div class="wysiwyg-collapsible-content">
+                            <ul class="wysiwyg-checklist">
+                                <li class="checked">Text highlighting</li>
+                                <li class="checked">Subscript and superscript</li>
+                                <li>Advanced tables</li>
+                                <li>Video embedding</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <table class="wysiwyg-table-advanced">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>v0.1.x</th>
+                                <th>v0.2.0</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Basic formatting</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced formatting</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Find & Replace</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+                demoEditor.setContent(sampleContent);
+            }
+        }
+
+        function clearContent() {
+            if (demoEditor) {
+                demoEditor.setContent('');
+                demoEditor.focus();
+            }
+        }
+
+        function toggleFullscreen() {
+            if (demoEditor && demoEditor.wrapper) {
+                if (demoEditor.wrapper.classList.contains('wysiwyg-fullscreen')) {
+                    demoEditor.wrapper.classList.remove('wysiwyg-fullscreen');
+                    document.body.style.overflow = '';
+                } else {
+                    demoEditor.wrapper.classList.add('wysiwyg-fullscreen');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

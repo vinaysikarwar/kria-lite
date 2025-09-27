@@ -1,0 +1,52 @@
+{
+  "name": "kria-editor-v2",
+  "version": "0.2.0",
+  "description": "Kria Lite WYSIWYG Editor v0.2.0 - Enhanced Edition with advanced features",
+  "main": "kria.editor.v2.js",
+  "scripts": {
+    "build": "npm run build:minify",
+    "build:minify": "uglifyjs kria.editor.v2.js -o kria.editor.v2.min.js --source-map --compress --mangle",
+    "build:watch": "watch 'npm run build' kria.editor.v2.js",
+    "serve": "python3 -m http.server 8080",
+    "dev": "npm run serve"
+  },
+  "keywords": [
+    "wysiwyg",
+    "editor",
+    "rich-text",
+    "contenteditable",
+    "javascript",
+    "collaboration",
+    "v2",
+    "enhanced"
+  ],
+  "author": "Vinay Sikarwar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinaysikarwar/kria-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinaysikarwar/kria-editor/issues"
+  },
+  "homepage": "https://github.com/vinaysikarwar/kria-editor#readme",
+  "devDependencies": {
+    "uglify-js": "^3.17.4",
+    "watch": "^1.0.2"
+  },
+  "files": [
+    "kria.editor.v2.js",
+    "kria.editor.v2.min.js",
+    "demo.html",
+    "README.md"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

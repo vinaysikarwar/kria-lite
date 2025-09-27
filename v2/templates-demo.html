@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kria Editor v0.2.0 - Templates & Snippets Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .demo-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .demo-header h1 {
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+        .demo-header p {
+            color: #64748b;
+            font-size: 16px;
+        }
+        .instructions {
+            background: #e0f2fe;
+            border-left: 4px solid #0284c7;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        .instructions h3 {
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+        .instructions ul {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 4px 0;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>🎨 Templates & Snippets Demo</h1>
+        <p>Experience the built-in content templates and reusable snippets</p>
+    </div>
+
+    <div class="demo-container">
+        <div class="instructions">
+            <h3>🚀 How to Use Templates & Snippets</h3>
+            <ul>
+                <li><strong>Templates Button:</strong> Click the templates icon (📋) in the toolbar to access full-page templates</li>
+                <li><strong>Snippets Button:</strong> Click the snippets icon to insert smaller reusable content blocks</li>
+                <li><strong>Built-in Options:</strong> We've included meeting notes, article templates, tip boxes, and more!</li>
+                <li><strong>Custom Templates:</strong> You can also define your own templates when initializing the editor</li>
+            </ul>
+        </div>
+
+        <div data-wysiwyg-v2 
+             data-wysiwyg-height="500" 
+             data-wysiwyg-max-height="800"
+             data-wysiwyg-placeholder="Click the Templates or Snippets buttons in the toolbar to get started!">
+        </div>
+    </div>
+
+    <!-- Include the v0.2.0 Editor -->
+    <script src="kria.editor.v2.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize editor with default templates and snippets (built-in)
+            const editor = WYSIWYG.v2.init('[data-wysiwyg-v2]', {
+                toolbar: [
+                    'bold', 'italic', 'underline', 'highlight', '|',
+                    'h1', 'h2', 'h3', '|',
+                    'fontFamily', 'fontSize', 'fontColor', '|',
+                    'ul', 'ol', 'checklist', 'table', '|',
+                    'image', 'link', '|',
+                    'templates', 'insertSnippet', '|',
+                    'findReplace', 'wordCount', 'fullscreen'
+                ],
+                features: {
+                    wordCount: true,
+                    findReplace: true,
+                    imageResize: true,
+                    dragDrop: true,
+                    tableAdvanced: true
+                }
+                // Note: No need to define templates/snippets - they're built-in now!
+            });
+
+            console.log('Editor initialized with built-in templates and snippets!');
+            console.log('Available templates:', editor.options.templates.length);
+            console.log('Available snippets:', editor.options.snippets.length);
+        });
+    </script>
+</body>
+</html>
