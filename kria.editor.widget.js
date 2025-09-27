@@ -13,6 +13,7 @@
   const defaultOptions = {
     selector: '.wysiwyg',
     height: 360,
+    maxHeight: null, // e.g. 500 to limit editor height with scroll
     placeholder: 'Start typing...',
     sanitize: true,
     autosaveKey: null, // e.g. 'post-123-draft' to enable local autosave
@@ -215,9 +216,9 @@ function buildToolbar(toolbarConfig, instance) {
 .wysiwyg-toolbar button{-webkit-tap-highlight-color:transparent}
 .wysiwyg-toolbar button:focus-visible{outline:2px solid #94a3b8;outline-offset:2px}
 .wysiwyg-toolbar button svg{display:block;width:16px;height:16px}
-.wysiwyg-editor{min-height:120px;padding:14px;outline:none;color:inherit;word-break:break-word}
+.wysiwyg-editor{min-height:120px;padding:14px;outline:none;color:inherit;word-break:break-word;overflow-y:auto}
 .wysiwyg-editor[contenteditable='true']{cursor:text}
-.wysiwyg-source{width:100%;box-sizing:border-box;padding:10px;border:none;font-family:monospace;min-height:140px}
+.wysiwyg-source{width:100%;box-sizing:border-box;padding:10px;border:none;font-family:monospace;min-height:140px;overflow-y:auto}
 .wysiwyg-hidden{display:none}
 .wysiwyg-progress{height:6px;background:#f1f5f9;border-radius:6px;overflow:hidden;margin-top:6px}
 .wysiwyg-progress > i{display:block;height:100%;width:0%;background:#2563eb;border-radius:6px}
@@ -724,9 +725,19 @@ function installPasteHandler(instance){
     injectCss();
     const opts = Object.assign({}, defaultOptions, options || {});
     const wrapper = document.createElement('div'); wrapper.className = 'wysiwyg-wrapper';
-    const editorEl = document.createElement('div'); editorEl.className = 'wysiwyg-editor'; editorEl.contentEditable = true; editorEl.style.minHeight = (opts.height||300)+'px';
+    const editorEl = document.createElement('div'); editorEl.className = 'wysiwyg-editor'; editorEl.contentEditable = true; 
+    editorEl.style.minHeight = (opts.height||300)+'px';
+    if (opts.maxHeight) {
+      editorEl.style.maxHeight = opts.maxHeight + 'px';
+      editorEl.style.overflowY = 'auto';
+    }
     editorEl.innerHTML = textarea.value || '';
-    const sourceEl = document.createElement('textarea'); sourceEl.className='wysiwyg-source wysiwyg-hidden'; sourceEl.style.minHeight = (opts.height||300)+'px';
+    const sourceEl = document.createElement('textarea'); sourceEl.className='wysiwyg-source wysiwyg-hidden'; 
+    sourceEl.style.minHeight = (opts.height||300)+'px';
+    if (opts.maxHeight) {
+      sourceEl.style.maxHeight = opts.maxHeight + 'px';
+      sourceEl.style.overflowY = 'auto';
+    }
 
     const instance = { textarea, wrapper, editorEl, sourceEl, options: opts, fullscreen:false };
     instancesList.push(instance);
