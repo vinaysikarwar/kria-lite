@@ -13,7 +13,7 @@
   const defaultOptions = {
     selector: '.wysiwyg',
     height: 360,
-    maxHeight: null, // e.g. 500 to limit editor height with scroll
+    maxHeight: 750, // limit editor height with scroll
     placeholder: 'Start typing...',
     sanitize: true,
     autosaveKey: null, // e.g. 'post-123-draft' to enable local autosave
